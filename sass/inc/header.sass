@@ -1,0 +1,23 @@
+
+header.page
+	h1
+		font-size: 1.125em
+		a
+			display: block
+			padding: 20px 0 20px 5.5em
+
+			&, &:link, &:visited
+				color: $blue3
+
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				display: block
+				height: 2.7em
+				width: 5.5em
+				background: transparent url(/assets/nwalton-logo.svg) top left no-repeat
+
+	@media (min-width: $size-sm)
+		margin-left: -2.5%

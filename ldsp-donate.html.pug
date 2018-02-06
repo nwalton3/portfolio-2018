@@ -1,0 +1,76 @@
+extends tmp/main.pug
+
+block vars
+	- var current = 'case'
+	- var pageclass = 'case-study'
+
+block content
+
+	h1 LDS Philanthropies Donations
+
+	p.intro Allow quick and easy transactions through the LDS Philanthropies web donation form.
+
+	section.top
+		h2 Problem
+
+		p The LDSP online donation system took a long time to load and was prone to errors. It also had some UI items that needed to be updated, like very slow animations. We wanted to make the donation experience as smooth and friendly as possible.
+
+	section.top
+		h2 Users #[span.slash /] Constraints
+		p We have a pretty big demographic range of users for the site, but the users we decided to focus on were women, ages 45 and older&mdash;which make up a large proportion of our donors. Some of them don't spend much time on computers and can be intimidated by complicated interfaces. They also tend to user older technology as a whole than, say, an average internet user.
+
+	section.top
+		h2 Team #[span.slash /] Roles
+		p There were three people on the internal web team: one UX/UI designer (me), one web content specialist, and one product manager. We also worked closely with an off-site development team.
+
+		h3 My responsibilities
+		ul
+			li Contribute to initial needs analysis
+			li Analyze performance
+			li Analyze technical needs
+			li Research best prectices in design and development for web forms
+			li Design standard elements 
+			li Design interface
+			li Write interface labels, text, and errors
+			li Develop production-ready front-end code (HTML/CSS/JS)
+			li Test interface prototypes with users
+			li Assist back-end team implementing new system in Adobe Experience Manager
+
+
+	section.top
+		h2 Guiding Principles
+		p Based on the frequent use of older technology and the nature of many of the errors we saw with the previous form, I determined that the page should be as &ldquo;bulletproof&rdquo; as possible. That meant, in true progressive enhancement fashion, that it should use only standard form elements, and function even without javascript (it's just a form, after all). I decided to make liberal use of progressive disclosure (when javascript #[em was] enabled) to keep the form from becoming overwhelming. It also needed lots of inline error-checking to catch as many mistakes as possible in a friendly, intuitive way before sending the form back to the server. Finally, I decided to employ a lot of subtle UI animations to help users more easily keep track of what was happening on screen.
+
+	section.top
+		h2 Process
+		
+		section.sub
+			h3 Research
+			p 
+
+
+	section.top
+		h2 A few of my favorite things
+
+		section.sub
+			h3 Sweet animations
+			p I wanted to really fine-tune the interface animations, and make sure they were very consistent across the whole page. CSS animations offer more control over easing than javascript, but I needed to use both in some places. I wrote my own javascript animation engine, which weighs under 5K and mirrors the #[code cubic-bezier] easing control in CSS. It took quite awhile to work out the math, but I think the polish of the result was well worth the effort. I also made sure all movement and state changes on screen implemented the animation engine, so the interface has a very smooth, finished feel to it.
+
+		section.sub
+			h3 Super-easy radio buttons
+			p 
+
+		section.sub
+			h3 A robust error system
+			p 
+
+		section.sub
+			h3 Quick and easy search
+			p The previous system had used a fairly slow server call to search through the hundreds of funds available for donation. I moved it to a front-end function, with a JSON list for data (loaded asynchronously, of course). This provides an instantaneous, search-as-you-type interface. I also added some filtering options to help narrow things down.
+			+image-full( 'ldsp-donate-search.png', 'Fund search interface', true )
+
+	section.top
+		h2 Success measures
+
+	section.top
+		h2 Takeaways

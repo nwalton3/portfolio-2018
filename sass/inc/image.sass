@@ -1,0 +1,33 @@
+.image
+	margin: 2em -7% 2em -8%
+	transition: padding 250ms ease
+	max-width: 42em
+	@media (min-width: $size-sm)
+		margin: 2em -7% 2em -8%
+
+	&.standard
+		@media (min-width: $size-mid)
+			margin: 2.5em 0 2.5em
+			padding-right: 1.5em
+
+	&.full
+		max-width: 64em
+	
+img
+	max-width: 100%
+	margin: 0
+	padding: 0
+	display: block
+
+figcaption
+	font-size: 0.8em
+	padding: 0.5em 1em
+	font-style: italic
+	color: #999
+
+	em
+		font-style: normal
+
+	.standard &
+		@media (min-width: $size-mid)
+			padding: 0.5em 0

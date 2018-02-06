@@ -1,0 +1,109 @@
+
+*, *:before, *:after
+	position: relative
+	box-sizing: border-box
+
+html, body
+	font-size: 100%
+
+body
+	font-family: 'ratio'
+	font-weight: 300
+	padding: 0 6% 1em 7%
+	transition: font-size 250ms ease, padding 250ms ease
+	
+	@media (min-width: $size-sm)
+		padding: 0 8% 1em 9%
+		font-size: 1.0625em
+
+	@media (min-width: $size-mid)
+		padding: 0 10% 1em 11%
+		font-size: 1.125em
+
+	@media (min-width: $size-lg)
+		padding: 0 12% 1em 13%
+		font-size: 1.1875em
+
+	@media (min-width: $size-xl)
+		padding: 0 14% 1em 15%
+		font-size: 1.25em
+
+
+.regular, strong
+	font-weight: 400
+
+
+h1, h2, h3
+	color: $blue3
+
+h1, h2
+	font-family: "niveau-grotesk-small-caps"
+	font-weight: 500
+	text-transform: lowercase
+	margin: 1.4em 0 0.5em
+
+h3 
+	font-weight: 400
+	margin: 0.7em 0
+	@media (min-width: $size-lg)
+		margin: 1.4em 0 0.5em
+
+
+main.page
+	line-height: 1.4
+	padding-bottom: 5em
+	h1
+		font-size: 1.5em
+	h2
+		font-size: 1.125em
+
+	@media (min-width: $size-mid)
+		h1
+			font-size: 1.75em
+		h2
+			font-size: 1.25em
+
+h3.subtitle
+	font-size: 0.9em
+	text-transform: none
+	font-family: 'ratio'
+	font-weight: 300
+
+section.top
+	@media (min-width: $size-mid)
+		margin-top: 2em
+
+
+a
+	text-decoration: none
+	transition: color 200ms ease
+
+	&:link, &:visited
+		color: $blue1
+
+	&:hover, &:focus
+		color: $blue3
+
+p, ol, ul
+	max-width: 36em
+	color: #222
+
+p
+	margin: 0.7em 0
+	&.intro
+		font-weight: 400
+		font-size: 1.125em
+		max-width: 31.25em
+
+ol 
+	margin-left: 1.5em
+	list-style: decimal-leading-zero outside
+ul
+	font-weight: 300
+	margin-left: 1em
+	list-style: square outside
+
+ol ul
+	padding-top: 0.35em
+	margin-left: 0
+

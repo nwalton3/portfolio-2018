@@ -1,0 +1,191 @@
+extends tmp/main.pug
+
+block vars
+	- var current = 'case'
+	- var pageclass = 'case-study'
+
+block content
+
+	//- Main Image
+
+	h1 Learning Suite LMS
+
+	p.intro Enable professors and students at Brigham Young University to interact effectively through online tools associated with each course.
+
+	+image( 'ls-assignments.png', 'Learning Suite assignments page for professors' )
+
+	section.top
+		h2 Problem
+
+		p We needed to replace BYU&rsquo;s learning management system (LMS) with a new product capable of integrating directly with university systems, and able to handle the needs of professors and students across campus. It had to include a calendar system, discussion boards, assignments, gradebooks, exams, course documents, messaging, and an easy syllabus builder.
+
+
+
+	section.top
+		h2 Users
+
+		p This product serves all users of Brigham Young University courses. Course instructors use the teacher interface to create and manage course content and interactions. Students use the student interface to view course content and to interact with instructors and peers.
+
+	section.top
+		h2 Constraints
+
+		p One of the biggest challenges we faced was striking the balance between the needs of professors and students. Course organization styles varied wildly between professors, and many of them were reluctant to even move to a new system, let alone reorganize their entire course to fit a particular paradigm. On the other hand, students' only ask for consistency between their courses. They want to know exactly where to go for all of the essential course materials and information, and it frustrates them when professors vary too much.
+
+		p We also operated under some pretty heavy time constraints. The university had an aggresive deadline for dropping the old system, which gave us less than a year to have the new system built, tested, and ready for professors. We had to make tough decisions about what was really essential for the campus release.
+		+image( 'ls-icons.jpg', 'Selected Learning Suite icons' )
+
+
+	section.top
+		h2 Team #[span.slash /] Roles
+
+		p The team consisted of two lead developers, one UX/UI designer (me), and several instructional designers. We also had many student developers and testers working under supervision of the lead developers.
+
+		p Instructional designers were responsible for gathering requirements, helping to align our interface with current research on education practices where needed, creating wireframes, and giving feedback on designs.
+
+		h3 My responsibilities
+
+		ul
+			li Create and maintain design system and components
+			li Write style guide
+			li Build style guide website
+			li Write HTML so devs can implement style guide
+			li Write and maintain all CSS
+			li Train all team members to use style guide
+			li Train developers to write standards-compliant web code
+			li Write javascript for some complex interactions
+			li Write interface copy and labels
+			li Write most interface messages (success, error)
+			li Write back-end code as needed
+			li Review developers&rsquo; functional interfaces
+			li Create HTML mockups for demonstration and testing
+			li Create annotated design mockups for every state of every interaction (over 700 pages of high-fidelity screen designs)
+			li Organize, maintain, update, and share all UI design files
+			li Convert site to function in mobile browsers
+			li Consult on design of university IOS and Android apps 
+
+		+image-full( 'ls-all-discussions.jpg', 'Screen mockups document for Learning Suite discussions', true )
+
+
+	section.top
+		h2 Guiding Principles
+
+		//- Draft of guiding principles?
+
+		p Based on the needs we had and the constraints we were working under, I wrote this set of guidelines with some input from the team. With such a tight schedule, we needed to spend our energy on the things that would matter most to our users. (Point 5 was written specifically for the benefit of some of the young devs on the team.)
+
+		div.regular
+			ol
+				li
+					h3 Simplify
+					ul
+						li Design each page from the core out
+						li Remove or hide all non-essentials
+						li Define good defaults (don't add preferences)
+
+				li
+					h3 Enable relationships
+					ul
+						li Communication between instructor and student
+						li Student to student
+						li Instructor to instructor
+
+				li
+					h3 All surprises should be pleasant
+
+				li
+					h3 Every millisecond counts
+					ul
+						li Treat users' time as sacred
+						li Even small performance gains are worthwhile
+						li Streamline data entry and other tasks
+						li Don't make users do things twice
+
+				li
+					h3 "Functional" is not "finished"
+					ul
+						li An unfinished feature might be worse than no feature at all
+						li The last 10% makes a huge difference
+						li Polish breeds trust
+
+				li
+					h3 Start up with style, fail with grace
+					ul
+						li There are three states to every screen: blank, normal, and fail
+						li The initial screen (with no data) is the first impression
+						li Don't abandon users in their moment of need
+
+	section.top
+		h2 Process
+
+		section.sub
+			h3 Research
+			p Initial research and requirements-gathering was conducted by the instructional designers on the team. They often met with professors and could gather a good picture of what they needed. We also leveraged our usage statistics to gain insights on how the product was being used and how it might improve. As the UI became more established later on in the project, I participated in focus groups, observation sessions, and user interviews.
+
+		section.sub
+			h3 Plan and wireframe
+			p Design for a feature usually started with a whiteboard session (or several) which included me and an instructional designer. Once we came to agreement on the general layout, they usually created the wireframe from that discussion. This was a very fluid part of the process, and each of us contibuted to the UX design of a given interaction. There were sometimes several rounds of discussion and wireframing.
+			+image( 'ls-whiteboard.jpg', 'Whiteboard sketches for a visual exam question', true )
+
+		section.sub
+			h3 Design UI
+			p I was solely responsible for designing the UI. I created hundreds of screen mockups with notes, instructions, and cross-references to clearly document and articulate the design to developers.
+			p For any complex interaction I also created an HTML mockup for review and testing. This was especially true for screens that required animation or interactive visual feedback to the user. I built those interactions myself and then passed them to developers.
+			+image( 'ls-map.jpg', 'Mockup for creating a visual exam question', true )
+
+
+		section.sub
+			h3 Develop
+			p Developers used the UI design system to implement new designs. I consulted with them as needed throughout the build process, and reviewed the final result.
+
+		section.sub
+			h3 Test and gather feedback
+			p Once a design was built in our testing environment, our regression testing team wrote and tested their scripts for how the interface was intended to work. Once it was working as designed, we reviewed it and showed it to users before final release. Big features were released to selected professors for real-world testing and feedback before final release.
+			p I also made it a practice to &ldquo;eat our own dog food,&rdquo; as one of the developers used to say. I actively taught evening classes in the BYU design department and (of course) used Learning Suite wherever it made sense. I found that directly using the product uncovered many opportunities for me to suggest or make improvements.
+
+
+	section.top
+		h2 A few of my favorite things
+
+		section.sub
+			h3 Smart syllabus builder
+			//- Calendar image
+			p Adapting a course schedule to a new semester is a time-consuming task. It can also be error-prone because you need to account for university holidays and other scheduling anomalies. We built a syllabus tool that could automatically transfer assignments to a new semester and make a really good guess at where they should be placed. It even converts from semester to term and back. Once instructors enter their assignments in Learning Suite, it became easier to maintain from semester to semester.
+			+image( 'ls-syllabus.jpg', 'Syllabus assignments page', true )
+
+		section.sub
+			h3 Fast gradebook
+			//- Gradebook image
+			p We recognized the burden that professors have inputting hundreds of grades. We equipped our gradebook spreadsheet with lots of standard keyboard controls to make this as quick and painless as possible.
+			+image( 'ls-scores.png', 'Grade entry page', true )
+
+		section.sub
+			h3 Streamlined feedback
+			//- Feedback image
+			p We wanted to encourage interaction between professor and student as much as possible, especially in giving and getting feedback on assignments and tests. We used our discussion tool to enable not only text, but also audio and video feedback on students&rsquo; work.
+			+image( 'ls-discussions.jpg', 'Discussions page', true )
+
+		section.sub
+			h3 Integrated calendar
+			//- Combined calendar image
+			p One of the daunting tasks for students is keeping track of six or eight different schedules. We were able to take all of the calendars from all of their classes and combine them into a single view.
+			+image( 'ls-combined-schedule.jpg', 'Student combined schedule page', true )
+
+		section.sub
+			h3 Holiday greetings
+			//- Birthday image
+			p Finally, I really wanted the system to have some personality rather than being just another cold corporate interface. I convinced the developers to give me CSS hooks to decorate the interface for holidays. On those days you could use the Konami code (hello, NES) to unlock snowfall or other fun visuals. It could even wish users a happy birthday.
+			+image( 'ls-birthday.jpg', 'Birthday wishes from Learning Suite', true )
+
+
+	section.top
+		h2 Success measures
+		p Measuring our work on this project presented a few challenges. First, any fine-tuned quantitative measurements were left out of the first release in favor of just finishing the baseline features for instructors and students. We did track adoption rates, which increased each semester. The number of university courses using Learning Suite eclipsed the previous LMS after a few semesters, which we interpreted as a very positive trend. It currently enjoys usage rates that are singnificantly higher than the previous system.
+
+		p We had several sources of qualitative feedback. There was a prominent Help feature within the interface. We made members of our team available for direct feedback electronically or in person. We also engaged in interviews, focus groups, and surveys. All of this helped us populate our bug tracking system and also define our roadmap and releases. As you might expect, support tickets have decreased over time and feedback has become more and more positive.
+
+	section.top
+		h2 Takeaways
+		p The further I get from this project the more amazed I am that we pulled it off. Part of that success came from extremely dedicated and hard-working lead developers. One of the things I appreciate most about them was that they cared about the user experience and often offered good feedback on my work. The other thing I think that made it work was a design system that was established right out of the gate, including visuals #[em and] front-end code for many standard components. That allowed both UI and development to communicate effectively and work quickly.
+
+	//- Final image
+

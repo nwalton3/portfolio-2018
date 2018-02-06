@@ -1,0 +1,50 @@
+mixin image( url, alt, caption )
+	- caption = caption || false
+	.image.standard
+		figure
+			img(srcset="/img/400w/" + url +" 400w, /img/800w/" + url +" 800w, /img/1600w/" + url +" 1600w, /img/3200w/" + url +" 3200w" sizes="(max-width: 32em) 100vw, 86vw" src="/img/800w/" + url alt=alt)
+			if caption
+				figcaption!= alt
+
+mixin image-full( url, alt, caption )
+	- caption = caption || false
+	.image.full
+		figure
+			img(srcset="/img/400w/" + url +" 400w, /img/800w/" + url +" 800w, /img/1600w/" + url +" 1600w, /img/3200w/" + url +" 3200w" sizes="(max-width: 72em) 100vw, 90vw" src="/img/800w/" + url alt=alt)
+			if caption
+				figcaption!= alt
+
+
+html
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		title Nate Walton
+		meta(name="description" content="")
+		meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+		link(rel="manifest" href="site.webmanifest")
+		link(rel="apple-touch-icon" href="icon.png")
+		// Place favicon.ico in the root directory
+
+		link(rel="stylesheet" href="css/style.css")
+		block vars
+
+	body(class=pageclass)
+		header.page
+			h1
+				a(href="/") #[span.name Nate Walton] #[span.title Design]
+
+		nav.page
+			//- a(href="case-study.html" class=current == 'case' ? 'current' : '') Case Studies
+			//- a(href="visual.html" class=current == 'visual' ? 'current' : '') Visuals
+			//- a(href="process.html" class=current == 'process' ? 'current' : '') Process
+
+		main.page
+			block content
+			
+
+		footer.page
+			block foot
+				#footer
+					a(href="contact.html") Contact
